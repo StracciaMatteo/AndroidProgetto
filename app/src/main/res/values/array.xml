@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menutendina">
+        <item>Ordina</item>
+        <item>Visualizza Prodotti</item>
+        <item>Calendario Eventi</item>
+        <item>Offerte</item>
+        <item>Recensioni</item>
+    </string-array>
+
+    <string-array name="menuuser">
+        <item>Login</item>
+        <item>Registrazione</item>
+        <item>Profilo</item>
+        <item>Lista Preferiti</item>
+        <item>Esci</item>
+    </string-array>
+
+</resources>
