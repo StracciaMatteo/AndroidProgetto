@@ -13,6 +13,8 @@
         android:layout_height="192dp"
         android:layout_width="match_parent">
 
+
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
