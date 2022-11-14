@@ -14,16 +14,6 @@
         android:layout_width="match_parent">
 
 
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:gravity="center"
-            android:text=" RESTAURANT HOME"
-            android:textColor="#FFFFFF"
-            android:textSize="28dp" />
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -51,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:contentScrim="?attr/colorPrimary"
-        app:layout_anchor="@+id/appbar"
+        app:layout_anchor="appbar"
 
         app:layout_anchorGravity="bottom|center"
         app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
