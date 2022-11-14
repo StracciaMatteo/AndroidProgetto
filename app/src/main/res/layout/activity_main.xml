@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
+        android:id="@+id/appbarmain"
 
         android:layout_height="192dp"
         android:layout_width="match_parent">
@@ -35,6 +35,7 @@
         android:layout_height="match_parent"
 
 
+        android:contentDescription="@string/app_name"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
