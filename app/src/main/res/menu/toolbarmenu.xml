@@ -1,0 +1,42 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/ordina"
+
+        app:showAsAction="never"
+        android:title="Ordina"/>
+
+    <item
+        android:id="@+id/prodotti"
+        app:showAsAction="never"
+        android:title="Prodotti"/>
+
+    <item
+        android:id="@+id/calendarioeventi"
+        app:showAsAction="never"
+        android:title="Calendario Eventi"/>
+
+    <item
+        android:id="@+id/offerte"
+        app:showAsAction="never"
+        android:title="Offerte"/>
+
+    <item
+        android:id="@+id/recensioni"
+        app:showAsAction="never"
+        android:title="Recensioni"/>
+
+
+    <!--name="menutendina">
+    <item>Ordina</item>
+    <item>Visualizza Prodotti</item>
+    <item>Calendario Eventi</item>
+    <item>Offerte</item>
+    <item>Recensioni</item>
+android:icon="@android:drawable" -->
+
+</menu>
