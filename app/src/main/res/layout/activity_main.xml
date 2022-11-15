@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:contentScrim="?attr/colorPrimary"
-        app:layout_anchor="appbar"
+
 
         app:layout_anchorGravity="bottom|center"
         app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
