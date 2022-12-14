@@ -30,6 +30,19 @@
         app:showAsAction="never"
         android:title="Recensioni"/>
 
+    <item
+        android:id="@+id/impostazioni"
+        android:icon="@drawable/settings"
+        android:title="Impostazioni"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/azioniUtente"
+        android:icon="@drawable/user"
+        android:title="Utente"
+        app:showAsAction="always" />
+
+
 
     <!--name="menutendina">
     <item>Ordina</item>

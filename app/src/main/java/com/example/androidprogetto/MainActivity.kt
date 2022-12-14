@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
             R.id.recensioni -> {
                 println("Recensioni")
             }
+            R.id.azioniUtente -> {}
 
         }
         return true
