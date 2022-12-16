@@ -9,7 +9,6 @@
     android:foregroundGravity="fill">
 
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarmenu"
         android:layout_width="match_parent"
@@ -17,8 +16,9 @@
         android:background="@color/purple_700"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        />
+        app:logo="@drawable/logo"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -35,8 +35,44 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.123"
+            app:layout_constraintVertical_bias="0.118"
             app:srcCompat="@drawable/home" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="380dp"
+            android:layout_height="165dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="9dp"
+            android:background="#00FAFAFA"
+            android:backgroundTint="@color/white"
+            android:contentDescription="Ciao"
+            android:fontFamily="sans-serif-light"
+            android:text='Venite a gustare i sapori adriatici nel nostro favoloso ristorante "AndroidProgetto", situato ad Ancona in Via Brecce Bianche. Il nostro pesce è Km0, lo compriamo ogni mattina al porto di Ancona, direttamente dal produttore al consumatore.'
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.058" />
+
+        <Button
+            android:id="@+id/buttonHomePromo"
+            android:layout_width="376dp"
+            android:layout_height="180dp"
+            android:text="Bottone Offerta"
+            android:onClick="openPromo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
