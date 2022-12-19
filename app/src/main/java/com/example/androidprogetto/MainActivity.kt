@@ -18,16 +18,15 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbarmenu))
 
-        val button: Button = findViewById(R.id.buttonHomePromo)
-        button.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(v:View?){
-
-                Intent paginaPromo = new Intent(MainActivity.this,visualizza_offerte.class)
-
+        /*FUNZIONE PER PASSARE AD UN'ALTRA ACTIVITY TRAMITE CLICK SUL BOTTONE*/
+        val buttonClick = findViewById<Button>(R.id.buttonHomePromo)
+        buttonClick.setOnClickListener {
+        val intent = Intent(this, visualizza_offerte::class.java)
+        startActivity(intent)
             }
         }
-        )
-        }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.tmenu, menu)
@@ -38,21 +37,33 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item:MenuItem): Boolean{
         when (item.itemId) {
             R.id.ordina -> {
-                println("Ordina")
+                val intent = Intent(this, selzione_prodotti::class.java)
+                startActivity(intent)
             }
             R.id.prodotti -> {
-                println("Prodotti")
+                val intent = Intent(this, prodotti::class.java)
+                startActivity(intent)
             }
             R.id.calendarioeventi -> {
-                println("Calendario Eventi")
+                val intent = Intent(this, calendario_eventi::class.java)
+                startActivity(intent)
             }
             R.id.offerte -> {
-                println("Offerte")
+                val intent = Intent(this, visualizza_offerte::class.java)
+                startActivity(intent)
             }
             R.id.recensioni -> {
-                println("Recensioni")
+                val intent = Intent(this, recensioni::class.java)
+                startActivity(intent)
             }
-            R.id.azioniUtente -> {}
+            R.id.azioniUtente -> {
+                val intent = Intent(this, login::class.java)         /*dobbiamo agganciare il pop-up menu*/
+                startActivity(intent)
+            }
+            R.id.impostazioni -> {
+                val intent = Intent(this, impostazioni::class.java)
+                startActivity(intent)
+            }
 
         }
         return true
