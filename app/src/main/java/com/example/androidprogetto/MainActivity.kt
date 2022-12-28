@@ -7,7 +7,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+
 
 
 
@@ -24,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, visualizza_offerte::class.java)
         startActivity(intent)
             }
-        }
 
+        }
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -34,39 +37,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onOptionsItemSelected(item:MenuItem): Boolean{
-        when (item.itemId) {
-            R.id.ordina -> {
-                val intent = Intent(this, selzione_prodotti::class.java)
-                startActivity(intent)
-            }
-            R.id.prodotti -> {
-                val intent = Intent(this, prodotti::class.java)
-                startActivity(intent)
-            }
-            R.id.calendarioeventi -> {
-                val intent = Intent(this, calendario_eventi::class.java)
-                startActivity(intent)
-            }
-            R.id.offerte -> {
-                val intent = Intent(this, visualizza_offerte::class.java)
-                startActivity(intent)
-            }
-            R.id.recensioni -> {
-                val intent = Intent(this, recensioni::class.java)
-                startActivity(intent)
-            }
-            R.id.azioniUtente -> {
-                val intent = Intent(this, login::class.java)         /*dobbiamo agganciare il pop-up menu*/
-                startActivity(intent)
-            }
-            R.id.impostazioni -> {
-                val intent = Intent(this, impostazioni::class.java)
-                startActivity(intent)
-            }
+/* da riagguingere la parte del pop up menu sta sulla chat di teams */
 
-        }
-        return true
-    }
+
 
 }
