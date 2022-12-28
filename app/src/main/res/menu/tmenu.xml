@@ -39,7 +39,6 @@
         android:id="@+id/azioniUtente"
         android:icon="@drawable/user"
         android:title="Utente"
-        android:onClick="showPopUp"
         app:showAsAction="always" />
 
 

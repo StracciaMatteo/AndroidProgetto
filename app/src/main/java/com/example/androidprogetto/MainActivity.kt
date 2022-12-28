@@ -40,5 +40,38 @@ class MainActivity : AppCompatActivity() {
 /* da riagguingere la parte del pop up menu sta sulla chat di teams */
 
 
+    override fun onOptionsItemSelected(item:MenuItem): Boolean{
+        when (item.itemId) {
+            R.id.ordina -> {
+                val intent = Intent(this, selzione_prodotti::class.java)
+                startActivity(intent)
+            }
+            R.id.prodotti -> {
+                val intent = Intent(this, prodotti::class.java)
+                startActivity(intent)
+            }
+            R.id.calendarioeventi -> {
+                val intent = Intent(this, calendario_eventi::class.java)
+                startActivity(intent)
+            }
+            R.id.offerte -> {
+                val intent = Intent(this, visualizza_offerte::class.java)
+                startActivity(intent)
+            }
+            R.id.recensioni -> {
+                val intent = Intent(this, recensioni::class.java)
+                startActivity(intent)
+            }
+            R.id.azioniUtente -> {
+                val intent = Intent(this, login::class.java)         /*dobbiamo agganciare il pop-up menu*/
+                startActivity(intent)
+            }
+            R.id.impostazioni -> {
+                val intent = Intent(this, impostazioni::class.java)
+                startActivity(intent)
+            }
 
+        }
+        return true
+    }
 }
