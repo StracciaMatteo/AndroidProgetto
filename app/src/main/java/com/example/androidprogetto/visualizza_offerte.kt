@@ -42,10 +42,7 @@ class visualizza_offerte : AppCompatActivity() {
                 val intent = Intent(this, recensioni::class.java)
                 startActivity(intent)
             }
-            R.id.azioniUtente -> {
-                val intent = Intent(this, login::class.java)
-                startActivity(intent)
-            }
+
             R.id.impostazioni -> {
                 val intent = Intent(this, impostazioni::class.java)
                 startActivity(intent)

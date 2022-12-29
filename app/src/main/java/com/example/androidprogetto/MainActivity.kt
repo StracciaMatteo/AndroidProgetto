@@ -3,10 +3,12 @@ package com.example.androidprogetto
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
@@ -21,14 +23,60 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbarmenu))
 
-        /*FUNZIONE PER PASSARE AD UN'ALTRA ACTIVITY TRAMITE CLICK SUL BOTTONE*/
-        val buttonClick = findViewById<Button>(R.id.buttonHomePromo)
-        buttonClick.setOnClickListener {
-        val intent = Intent(this, visualizza_offerte::class.java)
-        startActivity(intent)
+        val imageUtente = findViewById<ImageView>(R.id.utente)
+        imageUtente.setOnClickListener{
+            val popupMenu = PopupMenu(this, it)
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId){
+                    R.id.accedi->{
+                        val intent = Intent(this, login::class.java)
+                        startActivity(intent)
+                        true
+                    }
+                    R.id.tuoipreferiti->{
+                        val intent = Intent(this, listapreferiti::class.java)
+                        startActivity(intent)
+                        true}
+                    R.id.profilo->{
+                        val intent = Intent(this, visualizzaprofilo::class.java)
+                        startActivity(intent)
+                        true}
+                    R.id.esci->{
+                        val intent = Intent(this, login::class.java)
+                        startActivity(intent)
+                        true}
+
+                    else -> false
+                }
+            }
+
+            popupMenu.inflate(R.menu.pmenu)
+            try {
+                val fieldMPopup=PopupMenu::class.java.getDeclaredField("mPopup")
+                fieldMPopup.isAccessible = true
+                val mPopup = fieldMPopup.get(popupMenu)
+                mPopup.javaClass
+                    .getDeclaredMethod("setForceShowIcon",Boolean::class.java)
+                    .invoke(mPopup,true)
+            }
+            catch (e: Exception){
+                Log.e("main", "Errore nel mostrare il menu", e)
+            }
+            finally {
+                popupMenu.show()
             }
 
         }
+
+        /*FUNZIONE PER PASSARE AD UN'ALTRA ACTIVITY TRAMITE CLICK SUL BOTTONE*/
+        val buttonClick = findViewById<Button>(R.id.buttonHomePromo)
+        buttonClick.setOnClickListener {
+            val intent = Intent(this, visualizza_offerte::class.java)
+            startActivity(intent)
+        }
+
+    }
+
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -37,10 +85,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-/* da riagguingere la parte del pop up menu sta sulla chat di teams */
-
-
-    override fun onOptionsItemSelected(item:MenuItem): Boolean{
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.ordina -> {
                 val intent = Intent(this, selzione_prodotti::class.java)
@@ -62,16 +107,16 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, recensioni::class.java)
                 startActivity(intent)
             }
-            R.id.azioniUtente -> {
-                val intent = Intent(this, login::class.java)         /*dobbiamo agganciare il pop-up menu*/
-                startActivity(intent)
-            }
+
             R.id.impostazioni -> {
                 val intent = Intent(this, impostazioni::class.java)
                 startActivity(intent)
             }
-
         }
         return true
     }
+
+
+
+
 }
