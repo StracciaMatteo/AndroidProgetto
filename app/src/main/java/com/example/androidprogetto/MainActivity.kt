@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.ordina -> {
-                val intent = Intent(this, selzione_prodotti::class.java)
+                val intent = Intent(this, scelta_servizio::class.java)
                 startActivity(intent)
             }
             R.id.prodotti -> {
