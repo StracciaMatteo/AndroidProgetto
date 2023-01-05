@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -64,5 +64,13 @@
             android:translationX="245dp"
             android:translationY="12dp" />
     </androidx.cardview.widget.CardView>
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="227dp"
+        android:layout_height="92dp"
+        android:text="Switch"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="258dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
