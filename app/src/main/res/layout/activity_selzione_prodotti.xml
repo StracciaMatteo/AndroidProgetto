@@ -41,10 +41,10 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="261dp"
-            android:layout_height="42dp"
+            android:layout_width="242dp"
+            android:layout_height="40dp"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="80dp"
             android:layout_marginEnd="132dp"
             android:fontFamily="sans-serif-medium"
             android:text="Scegli i prodotti"
@@ -58,22 +58,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Switch
-            android:id="@+id/switch2"
-            android:layout_width="99dp"
-            android:layout_height="72dp"
+            android:id="@+id/switchProdotti"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
             android:layout_marginStart="156dp"
             android:layout_marginTop="13dp"
             android:layout_marginEnd="156dp"
             android:layout_marginBottom="12dp"
-            android:text="Switch"
             android:textOff="Bevande"
             android:textOn="Cibo"
             app:layout_constraintBottom_toTopOf="@+id/cardView2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider2"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.208" />
 
         <View
             android:id="@+id/divider2"
@@ -89,8 +88,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
-            android:layout_width="380dp"
-            android:layout_height="250dp"
+            android:layout_width="382dp"
+            android:layout_height="244dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="11dp"
             android:layout_marginBottom="312dp"
@@ -108,7 +107,7 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="86dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10,00€"
                 android:textSize="24sp"
@@ -117,7 +116,7 @@
                 android:typeface="normal" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/buttonDettagli"
                 android:layout_width="179dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#3700B2"
@@ -133,9 +132,34 @@
                 android:text="Frittura di pesce "
                 android:textAlignment="textStart"
                 android:textColor="#4E4C4C"
-                android:textSize="34sp"
-                android:translationX="10dp" />
+                android:textSize="30sp"
+                android:translationX="10dp"
+                android:translationY="5dp" />
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textCibo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="44dp"
+            android:text="Cibo"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toStartOf="@+id/switchProdotti" />
+
+        <TextView
+            android:id="@+id/textBevenade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="Bevande"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/switchProdotti"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
