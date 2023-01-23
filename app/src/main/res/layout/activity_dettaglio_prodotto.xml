@@ -17,6 +17,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:logo="@drawable/logo"
+        app:navigationIcon="?homeAsUpIndicator"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
@@ -87,15 +88,16 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView4"
-            app:layout_constraintVertical_bias="0.375" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/contenutoIngredienti"
             android:layout_width="318dp"
             android:layout_height="99dp"
-            android:layout_marginStart="52dp"
+            android:layout_marginStart="56dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="322dp"
             android:text="Spaghetti, Moscioli di Portonovo, Vongole, Calamari, Gamberi, Uova, Tuorli, Panna fresca liquida, Aglio, Prezzemolo, Olio extravergine d'oliva, Pepe nero"
@@ -105,15 +107,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/listaIngredienti"
-            app:layout_constraintVertical_bias="0.175" />
+            app:layout_constraintVertical_bias="0.315" />
 
         <TextView
             android:id="@+id/listaAllergeni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
             android:layout_marginTop="168dp"
-            android:layout_marginEnd="207dp"
+            android:layout_marginEnd="224dp"
             android:layout_marginBottom="228dp"
             android:fontFamily="sans-serif-medium"
             android:text="Lista allergeni:"
@@ -121,23 +122,20 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.157"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/contenutoAllergeni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="19dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="11dp"
             android:layout_marginEnd="156dp"
-            android:layout_marginBottom="30dp"
             android:text="Uova, Molluschi, Pesce, Latte"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toTopOf="@+id/textview1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/listaAllergeni" />
@@ -146,32 +144,27 @@
             android:id="@+id/textview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="139dp"
-            android:layout_marginEnd="43dp"
-            android:layout_marginBottom="120dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginBottom="116dp"
             android:fontFamily="sans-serif-medium"
             android:text="Prezzo:"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/prezzo"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/prezzo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="42dp"
-            android:layout_marginEnd="156dp"
-            android:layout_marginBottom="133dp"
+            android:layout_marginEnd="224dp"
+            android:layout_marginBottom="116dp"
             android:fontFamily="sans-serif-medium"
             android:text="11 €"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contenutoAllergeni"
-            app:layout_constraintVertical_bias="0.35" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
