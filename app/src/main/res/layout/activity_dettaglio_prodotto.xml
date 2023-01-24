@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
 
 
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:foregroundGravity="fill">
 
@@ -23,8 +23,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="787dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         app:layout_anchor="@+id/constraintLayout"
         app:layout_anchorGravity="center">
 
@@ -129,9 +129,9 @@
             android:id="@+id/contenutoAllergeni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="11dp"
-            android:layout_marginEnd="156dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="152dp"
             android:text="Uova, Molluschi, Pesce, Latte"
             android:textColor="@color/black"
             android:textSize="16sp"
