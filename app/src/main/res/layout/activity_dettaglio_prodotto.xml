@@ -23,7 +23,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:layout_anchor="@+id/constraintLayout"
         app:layout_anchorGravity="center">
@@ -45,39 +45,42 @@
             android:id="@+id/NomeProdotto"
             android:layout_width="266dp"
             android:layout_height="40dp"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="104dp"
-            android:layout_marginEnd="73dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="117dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-medium"
             android:text="Carbonara di Mare"
             android:textColor="@color/black"
             android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/utente" />
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="184dp"
+            android:layout_height="109dp"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="51dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="56dp"
             android:layout_marginBottom="423dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/NomeProdotto"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/carbonara_di_mare" />
 
         <TextView
             android:id="@+id/listaIngredienti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="34dp"
-            android:layout_marginEnd="207dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="221dp"
             android:layout_marginBottom="370dp"
             android:fontFamily="sans-serif-medium"
             android:text="Lista ingredienti:"
@@ -85,23 +88,23 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <TextView
             android:id="@+id/contenutoIngredienti"
             android:layout_width="318dp"
             android:layout_height="99dp"
-            android:layout_marginStart="56dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="37dp"
             android:layout_marginBottom="322dp"
             android:text="Spaghetti, Moscioli di Portonovo, Vongole, Calamari, Gamberi, Uova, Tuorli, Panna fresca liquida, Aglio, Prezzemolo, Olio extravergine d'oliva, Pepe nero"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/listaIngredienti"
             app:layout_constraintVertical_bias="0.315" />
@@ -110,6 +113,7 @@
             android:id="@+id/listaAllergeni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="168dp"
             android:layout_marginEnd="224dp"
             android:layout_marginBottom="228dp"
@@ -119,6 +123,7 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView4"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -126,13 +131,15 @@
             android:id="@+id/contenutoAllergeni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="152dp"
+            android:layout_marginBottom="50dp"
             android:text="Uova, Molluschi, Pesce, Latte"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/textview1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/listaAllergeni" />
@@ -141,27 +148,34 @@
             android:id="@+id/textview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="116dp"
             android:fontFamily="sans-serif-medium"
             android:text="Prezzo:"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/prezzo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contenutoAllergeni" />
 
         <TextView
             android:id="@+id/prezzo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="224dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="184dp"
             android:layout_marginBottom="116dp"
             android:fontFamily="sans-serif-medium"
             android:text="11 €"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textview1"
+            app:layout_constraintTop_toBottomOf="@+id/contenutoAllergeni" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
