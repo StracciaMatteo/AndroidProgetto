@@ -80,20 +80,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
-        <EditText
-            android:id="@+id/plain_text_input1"
-            android:layout_width="365dp"
-            android:layout_height="158dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="23dp"
-            android:backgroundTint="#9C9C9C"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14"
-            tools:ignore="SpeakableTextPresentCheck" />
-
 
         <TextView
             android:id="@+id/textView14"
@@ -140,7 +126,9 @@
             android:layout_marginStart="70dp"
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="40dp"
+            android:background="@color/purple_700"
             android:text="Invia"
+            android:textColor="#D6D6D6"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -158,6 +146,21 @@
             app:layout_constraintBottom_toTopOf="@+id/ratingBar3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="354dp"
+            android:layout_height="163dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="18dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
