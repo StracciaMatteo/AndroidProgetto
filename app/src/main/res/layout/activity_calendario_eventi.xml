@@ -20,7 +20,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:layout_anchor="@+id/constraintLayout2"
         app:layout_anchorGravity="center">
@@ -85,21 +85,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/evento">
 
-            <EditText
-                android:id="@+id/DataEventoSel"
-                android:layout_width="107dp"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:inputType="date"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+            <TextView
+                android:id="@+id/Data"
+                android:layout_width="191dp"
+                android:layout_height="47dp"
+                android:text="xx/xx/xxxx"
+                android:textAlignment="viewStart"
+                android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/textView11"
-                android:layout_width="380dp"
-                android:layout_height="90dp"
+                android:id="@+id/Descrizione"
+                android:layout_width="191dp"
+                android:layout_height="93dp"
+                android:text="DescrizioneEvento"
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                android:translationX="191dp" />
+
+            <TextView
+                android:id="@+id/Nome"
+                android:layout_width="191dp"
+                android:layout_height="46dp"
                 android:text="NomeEvento"
-                android:textAlignment="viewEnd"
-                android:textSize="14sp" />
+                android:textAlignment="viewStart"
+                android:textSize="14sp"
+                android:translationY="47dp" />
 
         </androidx.cardview.widget.CardView>
 
