@@ -61,9 +61,7 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="18dp"
-            android:layout_marginBottom="33dp"
             android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -72,40 +70,26 @@
             android:id="@+id/textView5"
             android:layout_width="265dp"
             android:layout_height="31dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
             android:layout_marginEnd="57dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="24dp"
             android:text="Nome+Cognome"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/ratingBar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toEndOf="@+id/imageButton" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="51dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="156dp"
-            android:layout_marginEnd="7dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
-            tools:srcCompat="@mipmap/ic_launcher" />
+            app:layout_constraintStart_toEndOf="@+id/imageView6" />
 
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="236dp"
             android:layout_height="56dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="92dp"
             android:layout_marginEnd="132dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/divider3"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
@@ -141,40 +125,55 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="51dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="7dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView10"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider5"
-            tools:srcCompat="@tools:sample/avatars" />
-
         <TextView
             android:id="@+id/textView10"
             android:layout_width="265dp"
             android:layout_height="31dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="20dp"
             android:text="Nome2+Cognome2"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/ratingBar2"
-            app:layout_constraintStart_toEndOf="@+id/imageView6" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView7" />
 
         <RatingBar
             android:id="@+id/ratingBar2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="139dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6"
             tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="66dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="66dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar2"
+            app:layout_constraintEnd_toStartOf="@+id/textView10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
