@@ -90,7 +90,8 @@
                 android:layout_width="107dp"
                 android:layout_height="match_parent"
                 android:ems="10"
-                android:inputType="date" />
+                android:inputType="date"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/textView11"
