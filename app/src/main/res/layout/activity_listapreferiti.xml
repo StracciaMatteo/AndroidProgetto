@@ -112,7 +112,7 @@
             <ImageView
                 android:id="@+id/ImgProdottoN"
                 android:layout_width="238dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 app:srcCompat="@drawable/grigliata_di_pesce" />
 
             <TextView
