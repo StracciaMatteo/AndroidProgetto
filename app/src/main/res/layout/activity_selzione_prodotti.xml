@@ -59,20 +59,17 @@
 
         <Switch
             android:id="@+id/switchProdotti"
-            android:layout_width="48dp"
-            android:layout_height="49dp"
+            android:layout_width="50dp"
+            android:layout_height="52dp"
             android:layout_marginStart="156dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="14dp"
             android:layout_marginEnd="156dp"
-            android:layout_marginBottom="12dp"
             android:textOff="Bevande"
             android:textOn="Cibo"
-            app:layout_constraintBottom_toTopOf="@+id/cardView2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider2"
-            app:layout_constraintVertical_bias="0.208" />
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
         <View
             android:id="@+id/divider2"
@@ -88,14 +85,15 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
-            android:layout_width="382dp"
-            android:layout_height="244dp"
+            android:layout_width="379dp"
+            android:layout_height="240dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="11dp"
-            android:layout_marginBottom="312dp"
+            android:layout_marginBottom="276dp"
             app:cardBackgroundColor="#597F7D81"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.375"
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
@@ -132,7 +130,7 @@
                 android:text="Frittura di pesce "
                 android:textAlignment="textStart"
                 android:textColor="#4E4C4C"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:translationX="10dp"
                 android:translationY="5dp" />
         </androidx.cardview.widget.CardView>
@@ -141,22 +139,22 @@
             android:id="@+id/textCibo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="44dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="12dp"
             android:text="Cibo"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/cardView2"
-            app:layout_constraintEnd_toStartOf="@+id/switchProdotti" />
+            app:layout_constraintEnd_toStartOf="@+id/switchProdotti"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
         <TextView
             android:id="@+id/textBevenade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="22dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             android:text="Bevande"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/switchProdotti"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
