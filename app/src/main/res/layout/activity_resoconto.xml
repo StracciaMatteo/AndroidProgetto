@@ -26,60 +26,68 @@
         app:layout_anchorGravity="center">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
-            android:layout_width="382dp"
-            android:layout_height="93dp"
+            android:id="@+id/cardViewFood"
+            android:layout_width="384dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginEnd="13dp"
             android:translationY="-400dp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="578dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textpiatti">
 
             <TextView
-                android:id="@+id/Data"
-                android:layout_width="191dp"
-                android:layout_height="47dp"
-                android:text="xx/xx/xxxx"
-                android:textAlignment="viewStart"
-                android:textSize="14sp" />
+                android:id="@+id/QuantitaP"
+                android:layout_width="128dp"
+                android:layout_height="match_parent"
+                android:text="x3"
+                android:textAlignment="center"
+                android:translationX="256dp" />
 
             <TextView
-                android:id="@+id/Descrizione"
-                android:layout_width="191dp"
-                android:layout_height="93dp"
-                android:text="DescrizioneEvento"
-                android:textAlignment="viewStart"
-                android:textSize="14sp"
-                android:translationX="191dp" />
+                android:id="@+id/PrezzoP"
+                android:layout_width="128dp"
+                android:layout_height="match_parent"
+                android:text="18$"
+                android:textAlignment="center"
+                android:translationX="128dp" />
 
             <TextView
-                android:id="@+id/Nome"
-                android:layout_width="191dp"
-                android:layout_height="46dp"
-                android:text="NomeEvento"
-                android:textAlignment="viewStart"
-                android:textSize="14sp"
-                android:translationY="47dp" />
-
+                android:id="@+id/NomeP"
+                android:layout_width="128dp"
+                android:layout_height="match_parent"
+                android:text="Frittura mista pesce" />
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/textbevande"
-            android:layout_width="384dp"
-            android:layout_height="35dp"
+            android:layout_width="380dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-268dp"
+            android:layout_marginEnd="11dp"
             android:text="Bevande"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="380dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewFood" />
 
         <TextView
             android:id="@+id/textpiatti"
             android:layout_width="384dp"
             android:layout_height="35dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="11dp"
             android:text="Piatti"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="131dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <ImageView
             android:id="@+id/utente"
@@ -115,54 +123,68 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
-            android:layout_width="382dp"
-            android:layout_height="93dp"
+            android:id="@+id/cardViewDrink"
+            android:layout_width="384dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="185dp"
+            android:layout_marginEnd="13dp"
             android:translationY="-150dp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="578dp">
-
-            <TextView
-                android:id="@+id/Data"
-                android:layout_width="191dp"
-                android:layout_height="47dp"
-                android:text="xx/xx/xxxx"
-                android:textAlignment="viewStart"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/Descrizione"
-                android:layout_width="191dp"
-                android:layout_height="93dp"
-                android:text="DescrizioneEvento"
-                android:textAlignment="viewStart"
-                android:textSize="14sp"
-                android:translationX="191dp" />
-
-            <TextView
-                android:id="@+id/Nome"
-                android:layout_width="191dp"
-                android:layout_height="46dp"
-                android:text="NomeEvento"
-                android:textAlignment="viewStart"
-                android:textSize="14sp"
-                android:translationY="47dp" />
-
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textbevande" />
 
         <View
             android:id="@+id/divider8"
             android:layout_width="409dp"
             android:layout_height="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="-60dp"
+            android:layout_marginEnd="1dp"
             android:background="?android:attr/listDivider"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="641dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewDrink" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="410dp"
-            android:layout_height="87dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="645dp" />
+            android:id="@+id/CardVieWTot"
+            android:layout_width="404dp"
+            android:layout_height="105dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/CalcoloTotale"
+                android:layout_width="202dp"
+                android:layout_height="44dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="32,50$"
+                android:textSize="16sp"
+                android:translationX="202dp" />
+
+            <Button
+                android:id="@+id/buttonDettagli3"
+                android:layout_width="164dp"
+                android:layout_height="59dp"
+                android:backgroundTint="#3700B2"
+                android:text="Ordina ora!"
+                android:textColor="#FFFFFF"
+                android:translationX="120dp"
+                android:translationY="45dp" />
+
+            <TextView
+                android:id="@+id/textTotale"
+                android:layout_width="202dp"
+                android:layout_height="44dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Totale:"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
