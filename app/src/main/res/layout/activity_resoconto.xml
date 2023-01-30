@@ -62,16 +62,15 @@
 
         <TextView
             android:id="@+id/textbevande"
-            android:layout_width="380dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="381dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
             android:layout_marginTop="-268dp"
             android:layout_marginEnd="11dp"
             android:text="Bevande"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardViewFood" />
 
@@ -125,14 +124,14 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewDrink"
             android:layout_width="384dp"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="185dp"
             android:layout_marginEnd="13dp"
             android:translationY="-150dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textbevande" >
+            app:layout_constraintTop_toTopOf="@+id/textbevande">
 
             <TextView
                 android:id="@+id/QuantitaD"
@@ -157,19 +156,6 @@
                 android:text="Birra bionda" />
         </androidx.cardview.widget.CardView>
 
-        <View
-            android:id="@+id/divider8"
-            android:layout_width="409dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="-60dp"
-            android:layout_marginEnd="1dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewDrink" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/CardVieWTot"
             android:layout_width="404dp"
@@ -183,17 +169,18 @@
 
             <TextView
                 android:id="@+id/CalcoloTotale"
-                android:layout_width="202dp"
-                android:layout_height="44dp"
+                android:layout_width="204dp"
+                android:layout_height="35dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="32,50$"
                 android:textSize="16sp"
-                android:translationX="202dp" />
+                android:translationX="202dp"
+                android:translationY="10dp" />
 
             <Button
                 android:id="@+id/buttonDettagli3"
-                android:layout_width="164dp"
-                android:layout_height="59dp"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
                 android:backgroundTint="#3700B2"
                 android:text="Ordina ora!"
                 android:textColor="#FFFFFF"
@@ -202,22 +189,37 @@
 
             <TextView
                 android:id="@+id/textTotale"
-                android:layout_width="202dp"
-                android:layout_height="44dp"
+                android:layout_width="175dp"
+                android:layout_height="32dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Totale:"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:translationX="10dp"
+                android:translationY="10dp" />
+
         </androidx.cardview.widget.CardView>
 
         <View
             android:id="@+id/divider7"
-            android:layout_width="match_parent"
+            android:layout_width="375dp"
             android:layout_height="1dp"
             android:layout_marginTop="-275dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardViewFood" />
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="375dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="8dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/CardVieWTot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

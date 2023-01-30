@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.impostazioni -> {
-                val intent = Intent(this, impostazioni::class.java)
+                val intent = Intent(this, resoconto::class.java)
                 startActivity(intent)
             }
         }
