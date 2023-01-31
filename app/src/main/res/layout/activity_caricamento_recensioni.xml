@@ -92,10 +92,10 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plain_text_input2" />
+            app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
         <EditText
-            android:id="@+id/plain_text_input2"
+            android:id="@+id/inputEmail"
             android:layout_width="359dp"
             android:layout_height="54dp"
             android:layout_marginStart="23dp"

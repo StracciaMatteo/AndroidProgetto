@@ -6,4 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".login">
 
+
+    <EditText
+        android:id="@+id/inputEmail"
+        android:layout_width="359dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="294dp"
+        android:layout_marginEnd="29dp"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/buttonOk"
+        android:layout_width="329dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="160dp"
+        android:text="Ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
