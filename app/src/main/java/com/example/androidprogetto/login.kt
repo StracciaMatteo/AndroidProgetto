@@ -32,8 +32,7 @@ class login : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "Email sent.")
-                }
-            }*/
+                }*/
+            }
 
     }
-}

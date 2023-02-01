@@ -33,6 +33,13 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                         true
                     }
+
+                    R.id.registrazione->{
+                        val intent = Intent(this, registrazione::class.java)
+                        startActivity(intent)
+                        true
+                    }
+
                     R.id.tuoipreferiti->{
                         val intent = Intent(this, listapreferiti::class.java)
                         startActivity(intent)

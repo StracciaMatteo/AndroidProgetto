@@ -31,7 +31,6 @@ class registrazione : AppCompatActivity() {
 
         }
 
-        
         // See: https://developer.android.com/training/basics/intents/result
 /*private*/
         val signInLauncher = registerForActivityResult(
@@ -51,6 +50,7 @@ class registrazione : AppCompatActivity() {
             .setAvailableProviders(provider)
             .build()
         signInLauncher.launch(signInInten)
+
         
 
         val actionCodeSettings = ActionCodeSettings.newBuilder()

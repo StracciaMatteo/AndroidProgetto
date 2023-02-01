@@ -9,6 +9,10 @@
     android:title="Accedi" />
 
     <item
+    android:id="@+id/registrazione"
+    android:title="Registrati" />
+
+    <item
     android:id="@+id/tuoipreferiti"
     android:title="I tuoi preferiti" />
 
