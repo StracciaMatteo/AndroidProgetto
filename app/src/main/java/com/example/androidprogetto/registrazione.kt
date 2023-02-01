@@ -9,13 +9,13 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 
-
 class registrazione : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrazione)
 
-        /*private*/ fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
+        /*private*/
+        fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
             val response = result.idpResponse
             if (result.resultCode == RESULT_OK) {
                 // Successfully signed in
@@ -28,13 +28,15 @@ class registrazione : AppCompatActivity() {
                 // response.getError().getErrorCode() and handle the error.
                 // ...
             }
+
         }
 
         
         // See: https://developer.android.com/training/basics/intents/result
-/*private*/ val signInLauncher = registerForActivityResult(
+/*private*/
+        val signInLauncher = registerForActivityResult(
             FirebaseAuthUIActivityResultContract())
-            { res -> this.onSignInResult(res) }
+            { res -> onSignInResult(res) }      //ORIGINALE ::: { res -> this.onSignInResult(res) }
 
         // Choose authentication providers
         val provider = arrayListOf(
