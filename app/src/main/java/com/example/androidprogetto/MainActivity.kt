@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             popupMenu.setOnMenuItemClickListener { item ->
                 when (item.itemId){
                     R.id.accedi->{
-                        val intent = Intent(this, login::class.java)
+                        val intent = Intent(this, registrazione::class.java)
                         startActivity(intent)
                         true
                     }
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                         true}
                     R.id.esci->{
-                        val intent = Intent(this, login::class.java)
+                        val intent = Intent(this, registrazione::class.java)
                         startActivity(intent)
                         true}
 

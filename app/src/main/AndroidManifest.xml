@@ -139,7 +139,7 @@
 
                 <data
                     android:scheme="https"
-                    android:host="AndroidProgetto.it" />
+                    android:host="androidprogetto.it" />
             </intent-filter>
         </activity>
     </application>

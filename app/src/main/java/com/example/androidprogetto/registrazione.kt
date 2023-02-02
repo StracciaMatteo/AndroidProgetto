@@ -3,9 +3,15 @@ package com.example.androidprogetto
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.annotation.StringRes
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
+import com.firebase.uidemo.auth.SignedInActivity
+import com.firebase.uidemo.auth.SignedInActivity.Companion.createIntent
+import com.google.android.gms.tasks.Task
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 
@@ -32,7 +38,7 @@ class registrazione : AppCompatActivity() {
         }
 
         // See: https://developer.android.com/training/basics/intents/result
-/*private*/
+
         val signInLauncher = registerForActivityResult(
             FirebaseAuthUIActivityResultContract())
             { res -> onSignInResult(res) }      //ORIGINALE ::: { res -> this.onSignInResult(res) }
@@ -45,11 +51,12 @@ class registrazione : AppCompatActivity() {
 
 
 // Create and launch sign-in intent
-        val signInInten = AuthUI.getInstance()
+
+        val signInIntent = AuthUI.getInstance()
             .createSignInIntentBuilder()
             .setAvailableProviders(provider)
             .build()
-        signInLauncher.launch(signInInten)
+        signInLauncher.launch(signInIntent)
 
         
 
@@ -68,41 +75,57 @@ class registrazione : AppCompatActivity() {
                 .setActionCodeSettings(actionCodeSettings)
                 .build()
         )
-        val signInIntent = AuthUI.getInstance()
-            .createSignInIntentBuilder()
-            .setAvailableProviders(providers)
-            .build()
-        signInLauncher.launch(signInIntent)
-
 
 
         if (AuthUI.canHandleIntent(intent)) {
             val extras = intent.extras ?: return
-            val link = extras.getString("email_link_sign_in") //VERIFICARE SE BISOGNA PASSARGLI LA MAIL
+            val link = extras.getString("email_link_sign_in")
             if (link != null) {
                 val signInIntent = AuthUI.getInstance()
                     .createSignInIntentBuilder()
                     .setEmailLink(link)
                     .setAvailableProviders(providers)
+                    .setLogo(R.drawable.logo) // Set logo drawable
+                    .setTheme(R.style.Theme_AndroidProgetto_NoActionBar) //Set theme
                     .build()
                 signInLauncher.launch(signInIntent)
             }
         }
 
+
+        fun signOut() {
+            AuthUI.getInstance()
+                .signOut(this)
+                .addOnCompleteListener { task: Task<Void?> ->
+                    if (task.isSuccessful) {
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        true
+                        finish()
+                    } else {
+                        Log.w(SignedInActivity.TAG, "signOut:failure", task.exception)
+                        //showSnackbar(android.R.string.sign_out_failed)
+                    }
+                }
+        }
+
+
+
+
+        fun signOutNostra(){
         AuthUI.getInstance()
             .signOut(this)
-            .addOnCompleteListener {
-                //METTERE BOTTONE ESCI
-            }
+            .addOnCompleteListener {} }
 
+        /* PER SETTARE LA SCHERMATA, abbiamo aggiunto delle voci qui, sopra*/
         /*
-        val signInIntent = AuthUI.getInstance()
+        val signInIntentTheme = AuthUI.getInstance()
             .createSignInIntentBuilder()
             .setAvailableProviders(providers)
-            .setLogo(R.drawable.my_great_logo) // Set logo drawable
-            .setTheme(R.style.MySuperAppTheme) // Set theme
+            .setLogo(R.drawable.logo) // Set logo drawable
+            .setTheme(R.style.Theme_AndroidProgetto_NoActionBar) // Set theme
             .build()
-        signInLauncher.launch(signInIntent)*/
+        signInLauncher.launch(signInIntentTheme)*/
 
     }
 }
