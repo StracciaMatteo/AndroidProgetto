@@ -8,8 +8,8 @@ import androidx.annotation.StringRes
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
-import com.firebase.uidemo.auth.SignedInActivity
-import com.firebase.uidemo.auth.SignedInActivity.Companion.createIntent
+//import com.firebase.uidemo.auth.SignedInActivity
+//import com.firebase.uidemo.auth.SignedInActivity.Companion.createIntent
 import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ActionCodeSettings
@@ -103,7 +103,7 @@ class registrazione : AppCompatActivity() {
                         true
                         finish()
                     } else {
-                        Log.w(SignedInActivity.TAG, "signOut:failure", task.exception)
+                        //Log.w(SignedInActivity.TAG, "signOut:failure", task.exception)
                         //showSnackbar(android.R.string.sign_out_failed)
                     }
                 }
