@@ -3,17 +3,20 @@ package com.example.androidprogetto
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.annotation.StringRes
+import com.google.firebase.auth.ActionCodeSettings
+import com.google.firebase.auth.FirebaseAuth
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
+import com.google.android.gms.tasks.Task
+import android.util.Log
+import androidx.annotation.StringRes
+import com.google.android.material.snackbar.Snackbar
 //import com.firebase.uidemo.auth.SignedInActivity
 //import com.firebase.uidemo.auth.SignedInActivity.Companion.createIntent
-import com.google.android.gms.tasks.Task
-import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.ActionCodeSettings
-import com.google.firebase.auth.FirebaseAuth
+
+
+
 
 class registrazione : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
