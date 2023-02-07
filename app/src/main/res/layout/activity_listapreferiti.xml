@@ -39,6 +39,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#3700B2"
+                android:translationX="265dp"
+                android:translationY="108dp"
+                app:srcCompat="@android:drawable/ic_menu_delete"
+                tools:ignore="SpeakableTextPresentCheck" />
+
             <ImageView
                 android:id="@+id/ImgProdotto"
                 android:layout_width="238dp"
@@ -48,15 +60,15 @@
             <TextView
                 android:id="@+id/textPrezzo"
                 android:layout_width="137dp"
-                android:layout_height="91dp"
+                android:layout_height="66dp"
                 android:text=" PrezzoProdotto $"
                 android:translationX="238dp"
-                android:translationY="91dp" />
+                android:translationY="66dp" />
 
             <TextView
                 android:id="@+id/textNome"
                 android:layout_width="137dp"
-                android:layout_height="91dp"
+                android:layout_height="66dp"
                 android:text=" Nome Prodotto"
                 android:translationX="238dp" />
         </androidx.cardview.widget.CardView>
@@ -118,17 +130,29 @@
             <TextView
                 android:id="@+id/textPrezzoN"
                 android:layout_width="137dp"
-                android:layout_height="91dp"
+                android:layout_height="66dp"
                 android:text=" PrezzoProdotto $"
                 android:translationX="238dp"
-                android:translationY="91dp" />
+                android:translationY="66dp" />
 
             <TextView
                 android:id="@+id/textNomeN"
                 android:layout_width="137dp"
-                android:layout_height="91dp"
+                android:layout_height="66dp"
                 android:text=" Nome Prodotto"
                 android:translationX="238dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#3700B2"
+                android:translationX="265dp"
+                android:translationY="108dp"
+                app:srcCompat="@android:drawable/ic_menu_delete"
+                tools:ignore="SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
         <View

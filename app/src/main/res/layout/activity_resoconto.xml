@@ -37,17 +37,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textpiatti">
 
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#3700B2"
+                android:translationX="321dp"
+                android:translationY="-23dp"
+                app:srcCompat="@android:drawable/ic_menu_delete"
+                tools:ignore="SpeakableTextPresentCheck" />
+
             <TextView
                 android:id="@+id/QuantitaP"
-                android:layout_width="128dp"
+                android:layout_width="103dp"
                 android:layout_height="match_parent"
                 android:text="x3"
                 android:textAlignment="center"
-                android:translationX="256dp" />
+                android:translationX="231dp" />
 
             <TextView
                 android:id="@+id/PrezzoP"
-                android:layout_width="128dp"
+                android:layout_width="103dp"
                 android:layout_height="match_parent"
                 android:text="18$"
                 android:textAlignment="center"
@@ -133,17 +145,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textbevande">
 
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#3700B2"
+                android:translationX="321dp"
+                android:translationY="-23dp"
+                app:srcCompat="@android:drawable/ic_menu_delete"
+                tools:ignore="SpeakableTextPresentCheck" />
+
             <TextView
                 android:id="@+id/QuantitaD"
-                android:layout_width="128dp"
+                android:layout_width="103dp"
                 android:layout_height="match_parent"
                 android:text="x2"
                 android:textAlignment="center"
-                android:translationX="256dp" />
+                android:translationX="231dp" />
 
             <TextView
                 android:id="@+id/PrezzoD"
-                android:layout_width="128dp"
+                android:layout_width="103dp"
                 android:layout_height="match_parent"
                 android:text="5$"
                 android:textAlignment="center"
