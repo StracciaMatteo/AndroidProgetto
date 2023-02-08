@@ -12,8 +12,8 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
-
-
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
@@ -49,9 +49,10 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                         true}
                     R.id.esci->{
+                        Firebase.auth.signOut()
                         val intent = Intent(this, registrazione::class.java)
                         startActivity(intent)
-                        true}
+                        true }
 
                     else -> false
                 }

@@ -3,17 +3,13 @@ package com.example.androidprogetto
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.android.gms.tasks.Task
-import android.util.Log
-import androidx.annotation.StringRes
-import com.google.android.material.snackbar.Snackbar
-//import com.firebase.uidemo.auth.SignedInActivity
-//import com.firebase.uidemo.auth.SignedInActivity.Companion.createIntent
 
 
 
@@ -29,13 +25,17 @@ class registrazione : AppCompatActivity() {
             if (result.resultCode == RESULT_OK) {
                 // Successfully signed in
                 val user = FirebaseAuth.getInstance().currentUser
-                // ...
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             }
             else {
+                val intent = Intent(this, registrazione::class.java)
+                startActivity(intent)
                 // Sign in failed. If response is null the user canceled the
                 // sign-in flow using the back button. Otherwise check
-                // response.getError().getErrorCode() and handle the error.
-                // ...
+                // response.getError().getErrorCode() and handle the error
+
+                Log.e("login", "Autenticazione non riuscita correttamente")
             }
 
         }
@@ -53,7 +53,7 @@ class registrazione : AppCompatActivity() {
 
 
 
-// Create and launch sign-in intent
+        // Create and launch sign-in intent
 
         val signInIntent = AuthUI.getInstance()
             .createSignInIntentBuilder()
@@ -95,7 +95,7 @@ class registrazione : AppCompatActivity() {
             }
         }
 
-
+        /*
         fun signOut() {
             AuthUI.getInstance()
                 .signOut(this)
@@ -110,15 +110,17 @@ class registrazione : AppCompatActivity() {
                         //showSnackbar(android.R.string.sign_out_failed)
                     }
                 }
-        }
+        }*/
 
 
 
 
-        fun signOutNostra(){
+
         AuthUI.getInstance()
             .signOut(this)
             .addOnCompleteListener {} }
+
+
 
         /* PER SETTARE LA SCHERMATA, abbiamo aggiunto delle voci qui, sopra*/
         /*
@@ -131,4 +133,4 @@ class registrazione : AppCompatActivity() {
         signInLauncher.launch(signInIntentTheme)*/
 
     }
-}
+
