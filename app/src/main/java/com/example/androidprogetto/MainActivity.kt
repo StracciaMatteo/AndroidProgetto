@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.PopupMenu
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.ktx.auth
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                         true}
                     R.id.esci->{
                         Firebase.auth.signOut()
-                        val intent = Intent(this, registrazione::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         true }
 
@@ -81,6 +82,18 @@ class MainActivity : AppCompatActivity() {
         buttonClick.setOnClickListener {
             val intent = Intent(this, visualizza_offerte::class.java)
             startActivity(intent)
+        }
+
+        val user = Firebase.auth.currentUser
+        val textCU = findViewById<TextView>(R.id.textUser)
+        if (user != null) {
+
+            textCU.setText("Utente OK")   //DA CAMBIARE, STAMPA A SCHERMO MA LA TEXTVIEW è SBALLATA
+
+        }
+        else {
+
+            textCU.setText("")
         }
 
     }
@@ -117,7 +130,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.impostazioni -> {
-                val intent = Intent(this, resoconto::class.java)
+                val intent = Intent(this, impostazioni::class.java)
                 startActivity(intent)
             }
         }
