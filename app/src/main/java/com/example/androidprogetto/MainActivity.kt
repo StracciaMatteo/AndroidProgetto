@@ -2,6 +2,7 @@ package com.example.androidprogetto
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import com.example.androidprogetto.modificaprofilo
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -97,8 +98,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.tmenu, menu)

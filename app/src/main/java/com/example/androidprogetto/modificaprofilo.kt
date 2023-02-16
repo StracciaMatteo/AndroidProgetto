@@ -6,18 +6,19 @@ import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.BoringLayout.make
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.PopupMenu
+import android.widget.*
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.snackbar.Snackbar.make
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
+import org.checkerframework.common.subtyping.qual.Bottom
 
 class modificaprofilo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,14 +39,16 @@ class modificaprofilo : AppCompatActivity() {
              .addOnCompleteListener { task ->
                  if (task.isSuccessful) {
                      Log.d(TAG, "User profile updated.")
+                     Toast.makeText(this, "Dati sono stati aggiornati", Toast.LENGTH_LONG)
+                         .show()
+                 }
+                 else {
+                         Toast.makeText(this, "Dati non sono stati aggiornati", Toast.LENGTH_LONG)
+                             .show()
                  }
              }
          val intent = Intent(this, MainActivity::class.java)
          startActivity(intent)
-
-         Snackbar.make(findViewById(android.R.id.content), "Dati aggiornati", Snackbar.LENGTH_LONG)
-             .setActionTextColor(Color.RED)
-             .show();
      }
 
 
