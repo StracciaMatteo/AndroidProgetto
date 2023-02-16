@@ -6,19 +6,15 @@ import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.BoringLayout.make
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
-import com.google.android.material.bottomappbar.BottomAppBar
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.snackbar.Snackbar.make
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
-import org.checkerframework.common.subtyping.qual.Bottom
+
 
 class modificaprofilo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
