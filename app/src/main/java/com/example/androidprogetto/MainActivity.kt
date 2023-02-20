@@ -1,8 +1,8 @@
 package com.example.androidprogetto
 
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androidprogetto.modificaprofilo
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -15,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
@@ -24,6 +25,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbarmenu))
+
+        /*_Database________________________________________________________________
+
+        val db = Firebase.firestore
+
+        val userdb = hashMapOf(
+            "first" to "Ada",
+            "last" to "Lovelace",
+            "born" to 1815
+        )
+
+// Add a new document with a generated ID
+        db.collection("users")
+            .add(userdb)
+            .addOnSuccessListener { documentReference ->
+                Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.w(ContentValues.TAG, "Error adding document", e)
+            }
+
+        //___________________________________________________________________________*/
 
         val imageUtente = findViewById<ImageView>(R.id.utente)
         imageUtente.setOnClickListener{
@@ -135,8 +158,5 @@ class MainActivity : AppCompatActivity() {
         }
         return true
     }
-
-
-
 
 }
