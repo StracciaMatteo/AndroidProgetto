@@ -92,10 +92,10 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/inputTitolo" />
 
         <EditText
-            android:id="@+id/inputEmail"
+            android:id="@+id/inputTitolo"
             android:layout_width="359dp"
             android:layout_height="54dp"
             android:layout_marginStart="23dp"
@@ -108,19 +108,19 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <RatingBar
-            android:id="@+id/ratingBar3"
+            android:id="@+id/ratingBarRec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="85dp"
             android:layout_marginEnd="86dp"
             android:layout_marginBottom="33dp"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintBottom_toTopOf="@+id/buttonSalvaRec"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonSalvaRec"
             android:layout_width="271dp"
             android:layout_height="48dp"
             android:layout_marginStart="70dp"
@@ -143,12 +143,12 @@
             android:layout_marginBottom="17dp"
             android:text="Valutaci!"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/ratingBar3"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBarRec"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/inputTestoRec"
             android:layout_width="354dp"
             android:layout_height="163dp"
             android:layout_marginStart="18dp"
