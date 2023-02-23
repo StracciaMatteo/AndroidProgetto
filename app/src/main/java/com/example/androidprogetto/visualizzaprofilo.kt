@@ -1,6 +1,8 @@
 package com.example.androidprogetto
 
 import android.content.Intent
+import android.media.Image
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +15,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import java.net.URI
 
 class visualizzaprofilo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +25,8 @@ class visualizzaprofilo : AppCompatActivity() {
         val user = Firebase.auth.currentUser
         lateinit var name: String
         lateinit var email: String
+        //val photoUrl : Uri? = user?.photoUrl
+
         user?.let {
             for (profile in it.providerData) {
                 // Id of the provider (ex: google.com)
@@ -33,15 +38,18 @@ class visualizzaprofilo : AppCompatActivity() {
                 // Name, email address, and profile photo Url
                 name = profile.displayName.toString()
                 email = profile.email.toString()
-                //val photoUrl = profile.photoUrl
+
 
             }
         }
         val textName = findViewById<TextView>(R.id.textName)
-        textName.setText(name)
-
         val textMail = findViewById<TextView>(R.id.textMail)
-        textMail.setText(email)
+        val profileImage = findViewById<ImageView>(R.id.imageViewProfile)
+        if (user != null) {
+            textName.setText(user.displayName)
+            textMail.setText(email)
+            profileImage.setImageURI(user.photoUrl)
+        }
 
         /*val textName = findViewById<TextView>(R.id.textName)
         textName.setText(name)

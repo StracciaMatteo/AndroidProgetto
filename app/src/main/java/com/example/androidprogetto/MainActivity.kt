@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
         val textCU = findViewById<TextView>(R.id.textUser)
         if (user != null) {
 
-            textCU.setText("Utente OK")   //DA CAMBIARE, STAMPA A SCHERMO MA LA TEXTVIEW è SBALLATA
+            textCU.setText("Benvenuto "+user.displayName)   //DA CAMBIARE, STAMPA A SCHERMO MA LA TEXTVIEW è SBALLATA
 
         }
         else {
