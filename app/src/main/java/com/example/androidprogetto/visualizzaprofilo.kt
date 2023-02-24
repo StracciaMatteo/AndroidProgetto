@@ -48,7 +48,7 @@ class visualizzaprofilo : AppCompatActivity() {
         if (user != null) {
             textName.setText(user.displayName)
             textMail.setText(email)
-            profileImage.setImageURI(user.photoUrl)
+            profileImage.setImageURI(user.photoUrl) //NON FUNZIONANTE-> LA FOTO NON VIENE PRESA, PERO LA IMAGEVIEW CAMBIA (SPARISCE)
         }
 
         /*val textName = findViewById<TextView>(R.id.textName)
