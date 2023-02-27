@@ -1,6 +1,7 @@
 package com.example.androidprogetto
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.media.Image
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -38,17 +39,36 @@ class visualizzaprofilo : AppCompatActivity() {
                 // Name, email address, and profile photo Url
                 name = profile.displayName.toString()
                 email = profile.email.toString()
+                /*__________________________________________________
 
+                val avatarStgRef = firebase.storage().ref("Usuarios/" + user.uid + "/avatar.jpg")
+                // imgFile the Photo File.
+                avatarStgRef.put(imgFile).then(function(snapshot){
+                    snapshot.ref.getDownloadURL().then(function(url){  // Now I can use url
+                        user.updateProfile({
+                                photoURL: url       // <- URL from uploaded photo.
+                        }).then(function(){
+                            firebase.database().ref("Usuarios/" + user.uid).set({
+                                "photoUri": url   // <- URL from uploaded photo.
+                            })
+                        })
+                    })
+                })
+                //__________________________________________________*/
 
             }
         }
         val textName = findViewById<TextView>(R.id.textName)
         val textMail = findViewById<TextView>(R.id.textMail)
         val profileImage = findViewById<ImageView>(R.id.imageViewProfile)
+        val foto =  getResources().getDrawable(R.drawable.userchef, null)
+        //val foto = Uri.parse("https://lh3.googleusercontent.com/a/AGNmyxZM6CZshd-3LbKbEUvXZPg9Cg4aRUUNgXmZ-xlC_A=s96-c-rg-br100")
         if (user != null) {
             textName.setText(user.displayName)
             textMail.setText(email)
-            profileImage.setImageURI(user.photoUrl) //NON FUNZIONANTE-> LA FOTO NON VIENE PRESA, PERO LA IMAGEVIEW CAMBIA (SPARISCE)
+            //profileImage.setImageURI(foto)
+            profileImage.setImageDrawable(foto)
+            //profileImage.setImageURI(user.photoUrl) //NON FUNZIONANTE-> LA FOTO NON VIENE PRESA, PERO LA IMAGEVIEW CAMBIA (SPARISCE)
         }
 
         /*val textName = findViewById<TextView>(R.id.textName)
