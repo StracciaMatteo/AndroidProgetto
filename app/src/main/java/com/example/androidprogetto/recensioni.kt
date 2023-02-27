@@ -30,7 +30,7 @@ class recensioni : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //PER PASSARE I DATI DAL DB ALL'ACTIVITY (ma funziona con un solo documento e non con tutti)
+        //PER PASSARE I DATI DAL DB ALL'ACTIVITY (ma funziona con un solo documento e non con tutti gli altri)
         val nomecognome = findViewById<TextView>(R.id.textVNomeCogn)
         val titolo = findViewById<TextView>(R.id.textVTitoloRec)
         val testo = findViewById<TextView>(R.id.textVTestoRec)
