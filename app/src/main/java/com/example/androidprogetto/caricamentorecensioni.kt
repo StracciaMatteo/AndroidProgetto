@@ -32,11 +32,14 @@ class caricamentorecensioni : AppCompatActivity() {
 
             // Add a new document with a generated ID
             db.collection("recensioni2")
-                .add(recensioniKot)
+                .document("Rec1")
+                .set(recensioniKot)
+                //.add(recensioniKot)
                 .addOnSuccessListener { documentReference ->
                     Log.d(
                         ContentValues.TAG,
-                        "DocumentSnapshot added with ID: ${documentReference.id}"
+                        "Doc added"
+                        //"DocumentSnapshot added with ID: ${documentReference.id}"
                     )
                 }
                 .addOnFailureListener { e ->
