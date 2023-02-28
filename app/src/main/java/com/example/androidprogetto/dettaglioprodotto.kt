@@ -1,5 +1,6 @@
 package com.example.androidprogetto
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,13 +9,42 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.PopupMenu
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 
 class dettaglioprodotto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dettaglio_prodotto)
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbarmenu))
+        val user = Firebase.auth.currentUser
+        val db = Firebase.firestore
+
+        //CODICE PER POPOLARE LA VIEW DA FIRESTORE
+        val nomeP = findViewById<TextView>(R.id.NomeProdotto)
+        val ingredienti = findViewById<TextView>(R.id.contenutoIngredienti)
+        val allergeni = findViewById<TextView>(R.id.contenutoAllergeni)
+        val prezzo = findViewById<TextView>(R.id.prezzo)
+        val docRef = db.collection("Cibo").document("Frittura di pesce")
+
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                    nomeP.setText(document.toString())
+                    ingredienti.setText(document["IG1"].toString())
+                    allergeni.setText(document["AG1"].toString())
+                    prezzo.setText(document["Prezzo"].toString())
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
 
         val imageUtente = findViewById<ImageView>(R.id.utente)
         imageUtente.setOnClickListener{
