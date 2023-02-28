@@ -18,13 +18,11 @@ class caricamentorecensioni : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_caricamento_recensioni)
         val db = Firebase.firestore
-
-        //_______________________________________________________________________________________
-        //val numRec = db.collection("Recensioni").count().toString()
         val textProva = findViewById<TextView>(R.id.textViewProvaNumero)
-        //textProva.setText(numRec)
 
 
+
+        //FUNZIONE CHE CI PERMETTE DI SALVARE LA RECENSIONE SUL DB CON NUMERAZIONE PROGRESSIVA
         fun salvaRecensione() {
             val titolo = findViewById<EditText>(R.id.inputTitolo).getText().toString()
 
@@ -62,7 +60,7 @@ class caricamentorecensioni : AppCompatActivity() {
                     Log.w(ContentValues.TAG, "Error adding document", e)
                 }
             }
-            //else:::::
+
             else {
                 task.exception?.message?.let {
                     print(it)
@@ -71,7 +69,7 @@ class caricamentorecensioni : AppCompatActivity() {
 
         }}
 
-        /*FUNZIONE PER PASSARE AD UN'ALTRA ACTIVITY TRAMITE CLICK SUL BOTTONE E SALVARE LA RECENSIONE SUL DB*/
+        /*PER PASSARE AD UN'ALTRA ACTIVITY TRAMITE CLICK SUL BOTTONE E SALVARE LA RECENSIONE SUL DB*/
         val buttonClick = findViewById<Button>(R.id.buttonSalvaRec)
         buttonClick.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
