@@ -12,6 +12,7 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Text
 
