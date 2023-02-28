@@ -35,7 +35,7 @@ class dettaglioprodotto : AppCompatActivity() {
             .addOnSuccessListener { document ->
                 if (document != null) {
                     Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                    nomeP.setText(document.toString())
+                    nomeP.setText(document.id)
                     ingredienti.setText(document["IG1"].toString())
                     allergeni.setText(document["AG1"].toString())
                     prezzo.setText(document["Prezzo"].toString())
