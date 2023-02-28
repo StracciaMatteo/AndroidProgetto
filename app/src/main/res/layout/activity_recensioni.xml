@@ -163,7 +163,7 @@
             app:layout_constraintBottom_toTopOf="@+id/ratingBRec"
             app:layout_constraintEnd_toStartOf="@+id/textVNomeCogn"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            app:srcCompat="@drawable/userchef" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -175,7 +175,7 @@
             app:layout_constraintBottom_toTopOf="@+id/ratingBar2"
             app:layout_constraintEnd_toStartOf="@+id/textView10"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            app:srcCompat="@drawable/userchef" />
 
         <ImageButton
             android:id="@+id/imageButton"

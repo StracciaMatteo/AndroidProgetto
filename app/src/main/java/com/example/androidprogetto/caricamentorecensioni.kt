@@ -8,6 +8,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
+import android.widget.TextView
+import com.google.firebase.firestore.AggregateSource
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -16,6 +18,12 @@ class caricamentorecensioni : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_caricamento_recensioni)
         val db = Firebase.firestore
+
+        //_______________________________________________________________________________________
+        //val numRec = db.collection("Recensioni").count().toString()
+        val textProva = findViewById<TextView>(R.id.textViewProvaNumero)
+        //textProva.setText(numRec)
+
 
         fun salvaRecensione() {
             val titolo = findViewById<EditText>(R.id.inputTitolo).getText().toString()
@@ -30,9 +38,17 @@ class caricamentorecensioni : AppCompatActivity() {
                 "Valutazione" to valutazione
             )
 
+            val recensioniRef = db.collection("Recensioni")
+            val recensioniCount = recensioniRef.count()
+            recensioniCount.get(AggregateSource.SERVER).addOnCompleteListener { task ->
+
+            if (task.isSuccessful) {
+                val snapshot = task.result
+                textProva.setText("count: ${snapshot.count}")
+
             // Add a new document with a generated ID
-            db.collection("recensioni2")
-                .document("Rec1")
+            db.collection("Recensioni")
+                .document("Recensione"+ (snapshot.count.toInt()+1))
                 .set(recensioniKot)
                 //.add(recensioniKot)
                 .addOnSuccessListener { documentReference ->
@@ -45,7 +61,15 @@ class caricamentorecensioni : AppCompatActivity() {
                 .addOnFailureListener { e ->
                     Log.w(ContentValues.TAG, "Error adding document", e)
                 }
-        }
+            }
+            //else:::::
+            else {
+                task.exception?.message?.let {
+                    print(it)
+                }
+            }
+
+        }}
 
         /*FUNZIONE PER PASSARE AD UN'ALTRA ACTIVITY TRAMITE CLICK SUL BOTTONE E SALVARE LA RECENSIONE SUL DB*/
         val buttonClick = findViewById<Button>(R.id.buttonSalvaRec)
@@ -54,5 +78,6 @@ class caricamentorecensioni : AppCompatActivity() {
             startActivity(intent)
             salvaRecensione()
         }
-    }
-}
+
+}}
+
