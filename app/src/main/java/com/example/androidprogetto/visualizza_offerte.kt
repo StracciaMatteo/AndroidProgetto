@@ -1,5 +1,6 @@
 package com.example.androidprogetto
 
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,13 +9,17 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.PopupMenu
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class visualizza_offerte : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_visualizza_offerte)
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbarmenu))
+        val db = Firebase.firestore
 
         val imageUtente = findViewById<ImageView>(R.id.utente)
         imageUtente.setOnClickListener{
@@ -60,9 +65,32 @@ class visualizza_offerte : AppCompatActivity() {
             }
 
         }
+
+        //PER PASSARE I DATI DAL DB ALL'ACTIVITY (ma funziona con un solo documento e non con tutti gli altri)
+        val nomeprodotto = findViewById<TextView>(R.id.textNP)
+        val vecchioprezzo = findViewById<TextView>(R.id.textPV)
+        val nuovoprezzo = findViewById<TextView>(R.id.textPN)
+
+
+        val docRef = db.collection("Offerte").document("Frittura di pesce")
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    Log.d(ContentValues.TAG, "DocumentSnapshot data: ${document.data}")
+                    nomeprodotto.setText(document.id)
+                    vecchioprezzo.setText("Prezzo vecchio: "+(document["Vecchio prezzo"].toString()))
+                    nuovoprezzo.setText("Prezzo nuovo: "+(document["Nuovo prezzo"].toString()))
+
+                } else {
+                    Log.d(ContentValues.TAG, "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(ContentValues.TAG, "get failed with ", exception)
+            }
     }
 
-
+    // FUNZIONI PER CARICARE NELL'ACTIVITY I DUE MENU A TENDINA
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.tmenu, menu)
         return true
@@ -99,5 +127,11 @@ class visualizza_offerte : AppCompatActivity() {
         }
         return true
     }
+
+
+
+
+
+
 
 }

@@ -59,7 +59,8 @@
                 android:id="@+id/textPV"
                 android:layout_width="125dp"
                 android:layout_height="52dp"
-                android:text=" Prezzo vecchio"
+                android:textSize="16sp"
+                android:textStyle="italic"
                 android:translationX="245dp"
                 android:translationY="67dp" />
 
@@ -67,7 +68,8 @@
                 android:id="@+id/textPN"
                 android:layout_width="125dp"
                 android:layout_height="52dp"
-                android:text=" Prezzo nuovo"
+                android:textSize="16sp"
+                android:textStyle="italic"
                 android:translationX="245dp"
                 android:translationY="119dp" />
 
@@ -75,7 +77,9 @@
                 android:id="@+id/textNP"
                 android:layout_width="125dp"
                 android:layout_height="55dp"
-                android:text=" Nome Prodotto"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 android:translationX="245dp"
                 android:translationY="12dp" />
         </androidx.cardview.widget.CardView>
