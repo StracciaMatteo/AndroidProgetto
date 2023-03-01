@@ -12,6 +12,9 @@ import android.widget.TextView
 import com.google.firebase.firestore.AggregateSource
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.Date
 
 class caricamentorecensioni : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,10 +33,14 @@ class caricamentorecensioni : AppCompatActivity() {
 
             val valutazione = findViewById<RatingBar>(R.id.ratingBarRec).getRating().toInt()
 
+            val formato =DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")
+            val dataorario = LocalDateTime.now().format(formato)
+
             val recensioniKot = hashMapOf(
                 "Titolo" to titolo,
                 "Testo" to testo,
-                "Valutazione" to valutazione
+                "Valutazione" to valutazione,
+                "Data e ora" to dataorario
             )
 
             val recensioniRef = db.collection("Recensioni")
