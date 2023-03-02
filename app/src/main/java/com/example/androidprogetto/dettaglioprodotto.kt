@@ -11,10 +11,11 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Text
+
 
 class dettaglioprodotto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,11 +35,12 @@ class dettaglioprodotto : AppCompatActivity() {
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
                     nomeP.setText(document.id)
                     ingredienti.setText(document["IG1"].toString())
                     allergeni.setText(document["AG1"].toString())
                     prezzo.setText(document["Prezzo"].toString())
+                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+
                 } else {
                     Log.d(TAG, "No such document")
                 }

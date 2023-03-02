@@ -37,8 +37,7 @@ class recensioni : AppCompatActivity() {
         val valutazione = findViewById<RatingBar>(R.id.ratingBRec)
 
         val docRef = db.collection("Recensioni").document("Recensione1")
-        docRef.get()
-            .addOnSuccessListener { document ->
+            .addOnSuccessListener{ document ->
                 if (document != null) {
                     Log.d(TAG, "DocumentSnapshot data: ${document.data}")
                     nomecognome.setText("Matteo Straccia")
@@ -54,8 +53,5 @@ class recensioni : AppCompatActivity() {
             }
 
 
-
-
-
-        }
+    }
     }
