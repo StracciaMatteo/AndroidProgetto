@@ -67,6 +67,8 @@
             android:layout_marginTop="26dp"
             android:layout_marginEnd="31dp"
             android:layout_marginBottom="260dp"
+            android:minDate= "01/01/2023"
+            android:maxDate = "01/01/2025"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

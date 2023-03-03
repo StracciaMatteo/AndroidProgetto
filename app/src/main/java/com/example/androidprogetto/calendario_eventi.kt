@@ -1,5 +1,6 @@
 package com.example.androidprogetto
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,16 +9,54 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.PopupMenu
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class calendario_eventi : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendario_eventi)
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbarmenu))
+        val user = Firebase.auth.currentUser
+        val db = Firebase.firestore
 
-val imageUtente = findViewById<ImageView>(R.id.utente)
-imageUtente.setOnClickListener{
+
+
+        //CODICE PER POPOLARE LA VIEW DA FIRESTORE
+        val nomeEvento = findViewById<TextView>(R.id.Nome)
+        val dataeora = findViewById<TextView>(R.id.Data)
+        val descrizione = findViewById<TextView>(R.id.Descrizione)
+        val docRef = db.collection("Eventi").document("Evento1")
+
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+
+
+                    //Riempimento CARDVIEW
+                    nomeEvento.setText(document["Nome"].toString())
+                    dataeora.setText(document["Orario e Data"].toString())
+                    descrizione.setText(document["Descrizione"].toString())
+                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
+
+
+
+
+        val imageUtente = findViewById<ImageView>(R.id.utente)
+    imageUtente.setOnClickListener{
     val popupMenu = PopupMenu(this, it)
     popupMenu.setOnMenuItemClickListener { item ->
         when (item.itemId){
@@ -68,12 +107,14 @@ imageUtente.setOnClickListener{
 }
 
 
-override fun onCreateOptionsMenu(menu: Menu): Boolean {
+
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
     menuInflater.inflate(R.menu.tmenu, menu)
     return true
 }
 
-override fun onOptionsItemSelected(item: MenuItem): Boolean{
+    override fun onOptionsItemSelected(item: MenuItem): Boolean{
     when (item.itemId) {
         R.id.ordina -> {
             val intent = Intent(this, scelta_servizio::class.java)
