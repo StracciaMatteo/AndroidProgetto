@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Switch
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 
 class selzione_prodotti : AppCompatActivity() {
@@ -20,13 +22,35 @@ class selzione_prodotti : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val switchClick = findViewById<Switch>(R.id.switchProdotti)
-        switchClick.setOnClickListener {
-            val intent = Intent(this, FirstFragment::class.java)
-            startActivity(intent)
+        // SEZIONE CHE GESTISCE L'AUMENTO E IL DECREMENTO DEL CONTATORE DEI PRODOTTI
+        val numero = findViewById<TextView>(R.id.numProd)
+        numero.setText("0")
+        var counter = 0
+
+
+        val buttonPlus = findViewById<Button>(R.id.buttonPlus)
+        buttonPlus.setOnClickListener {
+            counter++
+            numero.setText(counter.toString())
         }
+
+        val buttonMinus = findViewById<Button>(R.id.buttonMinus)
+        buttonMinus.setOnClickListener {
+            counter--
+            if (counter >=0)
+            numero.setText(counter.toString())
+
+            //DOVREBBE SERVIRE AD IMPEDIRE CHE SI USINO NUMERI NEGATIVI, MA NON FUNZIONA (SERVE SOLO A FAR APPARIRE IL TOAST)
+            if (counter<0)
+                Toast.makeText(this, "NO!", Toast.LENGTH_LONG)
+                    .show()
+        }
+        }
+
+
     }
 
-}
+
+
 
 
