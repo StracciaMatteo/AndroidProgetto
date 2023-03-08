@@ -36,14 +36,15 @@ class selzione_prodotti : AppCompatActivity() {
 
         val buttonMinus = findViewById<Button>(R.id.buttonMinus)
         buttonMinus.setOnClickListener {
+            if (counter >0){
             counter--
-            if (counter >=0)
-            numero.setText(counter.toString())
+            numero.setText(counter.toString())}
 
-            //DOVREBBE SERVIRE AD IMPEDIRE CHE SI USINO NUMERI NEGATIVI, MA NON FUNZIONA (SERVE SOLO A FAR APPARIRE IL TOAST)
-            if (counter<0)
-                Toast.makeText(this, "NO!", Toast.LENGTH_LONG)
+            else {
+                Toast.makeText(this, "Non puoi scendere sotto lo zero", Toast.LENGTH_LONG)
                     .show()
+            }
+
         }
         }
 
