@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.CalendarView
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
@@ -15,6 +16,8 @@ import androidx.appcompat.widget.Toolbar
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class calendario_eventi : AppCompatActivity() {
 
@@ -24,6 +27,8 @@ class calendario_eventi : AppCompatActivity() {
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbarmenu))
         val user = Firebase.auth.currentUser
         val db = Firebase.firestore
+        val cal = findViewById<CalendarView>(R.id.calendarioEventi)
+        cal.setDate(Calendar.getInstance().getTimeInMillis(),false,true)
 
 
 
@@ -33,6 +38,10 @@ class calendario_eventi : AppCompatActivity() {
         val descrizione = findViewById<TextView>(R.id.Descrizione)
         val docRef = db.collection("Eventi").document("Evento1")
 
+
+
+
+
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
@@ -40,7 +49,7 @@ class calendario_eventi : AppCompatActivity() {
 
                     //Riempimento CARDVIEW
                     nomeEvento.setText(document["Nome"].toString())
-                    dataeora.setText(document["Orario e Data"].toString())
+                    dataeora.setText(document["Data"].toString()+" "+document["Orario"].toString())
                     descrizione.setText(document["Descrizione"].toString())
                     Log.d(TAG, "DocumentSnapshot data: ${document.data}")
 

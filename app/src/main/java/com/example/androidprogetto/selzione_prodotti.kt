@@ -44,11 +44,8 @@ class selzione_prodotti : AppCompatActivity() {
                 Toast.makeText(this, "Non puoi scendere sotto lo zero", Toast.LENGTH_LONG)
                     .show()
             }
-
         }
         }
-
-
     }
 
 
