@@ -28,7 +28,8 @@ class calendario_eventi : AppCompatActivity() {
         val user = Firebase.auth.currentUser
         val db = Firebase.firestore
         val cal = findViewById<CalendarView>(R.id.calendarioEventi)
-        cal.setDate(Calendar.getInstance().getTimeInMillis(),false,true)
+        cal.setDate(Calendar.getInstance().getTimeInMillis(),false,true) //imposta di default la data corrente
+        val dataOdierna= cal.getDate() //la variabile viene popolata con la data scelta sulla calendarView
 
 
 
@@ -36,34 +37,30 @@ class calendario_eventi : AppCompatActivity() {
         val nomeEvento = findViewById<TextView>(R.id.Nome)
         val dataeora = findViewById<TextView>(R.id.Data)
         val descrizione = findViewById<TextView>(R.id.Descrizione)
-        val docRef = db.collection("Eventi").document("Evento1")
 
 
+        // Create a reference to the cities collection
+        val eventiRef = db.collection("Eventi")
 
-
-
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-
-
+        // Create a query against the collection.
+        val query = eventiRef.whereEqualTo("Data", dataOdierna)
+        .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
                     //Riempimento CARDVIEW
                     nomeEvento.setText(document["Nome"].toString())
                     dataeora.setText(document["Data"].toString()+" "+document["Orario"].toString())
                     descrizione.setText(document["Descrizione"].toString())
-                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-
-                } else {
-                    Log.d(TAG, "No such document")
+                    Log.d(TAG, "${document.id} => ${document.data}")
                 }
-            }
+                }
+
             .addOnFailureListener { exception ->
-                Log.d(TAG, "get failed with ", exception)
+                Log.w(TAG, "Error getting documents: ", exception )
             }
 
 
-
-
+        //Popup menu UTENTE
         val imageUtente = findViewById<ImageView>(R.id.utente)
     imageUtente.setOnClickListener{
     val popupMenu = PopupMenu(this, it)
