@@ -2,21 +2,21 @@ package com.example.androidprogetto
 
 import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.CalendarView
+import android.widget.CalendarView.OnDateChangeListener
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.google.firebase.firestore.ktx.firestore
+import androidx.core.graphics.toColorInt
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class calendario_eventi : AppCompatActivity() {
@@ -28,36 +28,51 @@ class calendario_eventi : AppCompatActivity() {
         val user = Firebase.auth.currentUser
         val db = Firebase.firestore
         val cal = findViewById<CalendarView>(R.id.calendarioEventi)
+        val txtprova = findViewById<TextView>(R.id.prova)
         cal.setDate(Calendar.getInstance().getTimeInMillis(),false,true) //imposta di default la data corrente
-        val dataOdierna= cal.getDate() //la variabile viene popolata con la data scelta sulla calendarView
+
+
+        cal
+            .setOnDateChangeListener(
+                OnDateChangeListener { view, year, month, dayOfMonth ->
+                    // In this Listener we are getting values
+                    // such as year, month and day of month
+                    // on below line we are creating a variable
+                    // in which we are adding all the variables in it.
+                    val dataSelezionata = (dayOfMonth.toString() + "/"
+                            + (month + 1) + "/" + year)
+
+                    // set this date in TextView for Display
+                    txtprova.setText(dataSelezionata)
+
+                    //CODICE PER POPOLARE LA VIEW DA FIRESTORE
+                    val nomeEvento = findViewById<TextView>(R.id.Nome)
+                    val dataeora = findViewById<TextView>(R.id.Data)
+                    val descrizione = findViewById<TextView>(R.id.Descrizione)
+
+                    // Create a reference to the cities collection
+                    val eventiRef = db.collection("Eventi")
+
+                    // Create a query against the collection.
+                    val query = eventiRef.whereEqualTo("Data", dataSelezionata)
+                        .get()
+                        .addOnSuccessListener { documents ->
+                            for (document in documents) {
+                                //Riempimento CARDVIEW
+                                nomeEvento.setText(document["Nome"].toString())
+                                dataeora.setText(document["Data"].toString()+" "+document["Orario"].toString())
+                                descrizione.setText(document["Descrizione"].toString())
+                                Log.d(TAG, "${document.id} => ${document.data}")
+                            }
+                        }
+
+                        .addOnFailureListener { exception ->
+                            Log.w(TAG, "Error getting documents: ", exception )
+                        }
+                })
 
 
 
-        //CODICE PER POPOLARE LA VIEW DA FIRESTORE
-        val nomeEvento = findViewById<TextView>(R.id.Nome)
-        val dataeora = findViewById<TextView>(R.id.Data)
-        val descrizione = findViewById<TextView>(R.id.Descrizione)
-
-
-        // Create a reference to the cities collection
-        val eventiRef = db.collection("Eventi")
-
-        // Create a query against the collection.
-        val query = eventiRef.whereEqualTo("Data", dataOdierna)
-        .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    //Riempimento CARDVIEW
-                    nomeEvento.setText(document["Nome"].toString())
-                    dataeora.setText(document["Data"].toString()+" "+document["Orario"].toString())
-                    descrizione.setText(document["Descrizione"].toString())
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
-                }
-
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents: ", exception )
-            }
 
 
         //Popup menu UTENTE
@@ -111,8 +126,6 @@ class calendario_eventi : AppCompatActivity() {
 
 }
 }
-
-
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

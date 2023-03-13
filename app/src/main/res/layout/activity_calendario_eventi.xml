@@ -130,6 +130,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calendarioEventi" />
 
+        <TextView
+            android:id="@+id/prova"
+            android:layout_width="170dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="193dp"
+            android:layout_marginBottom="220dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
