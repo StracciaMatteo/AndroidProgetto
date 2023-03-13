@@ -28,7 +28,7 @@ class calendario_eventi : AppCompatActivity() {
         val user = Firebase.auth.currentUser
         val db = Firebase.firestore
         val cal = findViewById<CalendarView>(R.id.calendarioEventi)
-        val txtprova = findViewById<TextView>(R.id.prova)
+        val txtprova = findViewById<TextView>(R.id.prova) // TXTVW PROVA
         cal.setDate(Calendar.getInstance().getTimeInMillis(),false,true) //imposta di default la data corrente
 
 
