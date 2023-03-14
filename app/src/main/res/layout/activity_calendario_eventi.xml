@@ -5,6 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textDirection="locale"
     tools:context=".calendario_eventi">
 
     <androidx.appcompat.widget.Toolbar
@@ -60,21 +61,25 @@
 
         <CalendarView
             android:id="@+id/calendarioEventi"
-            style="@android:style/Widget.Material.CalendarView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="26dp"
             android:layout_marginEnd="31dp"
             android:layout_marginBottom="260dp"
+            android:contextClickable="false"
+            android:dateTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:defaultFocusHighlightEnabled="true"
             android:focusedMonthDateColor="#F44336"
             android:maxDate="01/01/2025"
             android:minDate="01/01/2023"
+            android:selectedWeekBackgroundColor="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="1.0" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView3"
@@ -134,8 +139,8 @@
             android:id="@+id/prova"
             android:layout_width="170dp"
             android:layout_height="25dp"
-            android:layout_marginStart="193dp"
-            android:layout_marginBottom="220dp"
+            android:layout_marginStart="188dp"
+            android:layout_marginBottom="192dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
