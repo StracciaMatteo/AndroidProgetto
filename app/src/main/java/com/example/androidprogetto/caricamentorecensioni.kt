@@ -53,7 +53,7 @@ class caricamentorecensioni : AppCompatActivity() {
 
             // Add a new document with a generated ID
             db.collection("Recensioni")
-                .document("Recensione"+ (snapshot.count.toInt()+1))
+                .document("Recensione" + (snapshot.count.toInt()+1))
                 .set(recensioniKot)
                 //.add(recensioniKot)
                 .addOnSuccessListener { documentReference ->
