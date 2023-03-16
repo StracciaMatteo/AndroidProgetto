@@ -29,6 +29,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".transizione_resoconto"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".selzione_prodotti"
             android:exported="false">
             <meta-data

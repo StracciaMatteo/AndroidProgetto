@@ -20,6 +20,9 @@ class resoconto : AppCompatActivity() {
         setSupportActionBar(findViewById<Toolbar>(R.id.toolbarmenu))
         val db = Firebase.firestore
 
+
+
+
         //PER PASSARE I DATI DAL DB ALL'ACTIVITY (ma funziona con un solo documento e non con tutti gli altri)
         val nome = findViewById<TextView>(R.id.NomeP)
         val prezzo = findViewById<TextView>(R.id.PrezzoP)
@@ -32,8 +35,14 @@ class resoconto : AppCompatActivity() {
                 if (document != null) {
                     Log.d(ContentValues.TAG, "DocumentSnapshot data: ${document.data}")
                     nome.setText(document["Nome"].toString())
-                    prezzo.setText(document["Prezzo"].toString()+"€")
+                    prezzo.setText(document["Prezzo"].toString())
                     qtà.setText(document["Qtà"].toString())
+
+                    var getPrezzo = prezzo.getText().toString().toInt()
+                    var getQta = qtà.getText().toString().toInt()
+                    var totaleRes = getPrezzo*getQta
+                    totale.setText(totaleRes.toString()+"€")
+
 
                 } else {
                     Log.d(ContentValues.TAG, "No such document")
@@ -42,10 +51,21 @@ class resoconto : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d(ContentValues.TAG, "get failed with ", exception)
             }
-        val quantitaNum=qtà.toString().toInt()
-        val prezzoNum =prezzo.toString().toInt()
-        val totaleOrdine =  quantitaNum * prezzoNum
-        totale.setText(totaleOrdine)
+
+        fun updateTotale (){
+
+                totale.setText("0€")
+
+        }
+
+        val buttonCancella = findViewById<ImageButton>(R.id.iBElimina)
+        buttonCancella.setOnClickListener {
+                    nome.setText("")
+                    prezzo.setText("")
+                    qtà.setText("")
+                    updateTotale()
+        }
+
 
         val buttonOrdina = findViewById<Button>(R.id.buttonConfOrdine)
         buttonOrdina.setOnClickListener {

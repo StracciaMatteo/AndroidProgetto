@@ -38,7 +38,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textpiatti">
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/iBElimina"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="12dp"
@@ -158,7 +158,6 @@
                 android:id="@+id/QuantitaD"
                 android:layout_width="103dp"
                 android:layout_height="match_parent"
-                android:text="x2"
                 android:textAlignment="center"
                 android:translationX="231dp" />
 
@@ -166,15 +165,13 @@
                 android:id="@+id/PrezzoD"
                 android:layout_width="103dp"
                 android:layout_height="match_parent"
-                android:text="5$"
                 android:textAlignment="center"
                 android:translationX="128dp" />
 
             <TextView
                 android:id="@+id/NomeD"
                 android:layout_width="128dp"
-                android:layout_height="match_parent"
-                android:text="Birra bionda" />
+                android:layout_height="match_parent" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
