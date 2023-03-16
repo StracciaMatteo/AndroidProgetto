@@ -53,7 +53,6 @@
                 android:id="@+id/QuantitaP"
                 android:layout_width="103dp"
                 android:layout_height="match_parent"
-                android:text="x3"
                 android:textAlignment="center"
                 android:translationX="231dp" />
 
@@ -61,15 +60,13 @@
                 android:id="@+id/PrezzoP"
                 android:layout_width="103dp"
                 android:layout_height="match_parent"
-                android:text="18$"
                 android:textAlignment="center"
                 android:translationX="128dp" />
 
             <TextView
                 android:id="@+id/NomeP"
                 android:layout_width="128dp"
-                android:layout_height="match_parent"
-                android:text="Frittura mista pesce" />
+                android:layout_height="match_parent" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -196,13 +193,12 @@
                 android:layout_width="204dp"
                 android:layout_height="35dp"
                 android:fontFamily="sans-serif-medium"
-                android:text="32,50$"
                 android:textSize="16sp"
                 android:translationX="202dp"
                 android:translationY="10dp" />
 
             <Button
-                android:id="@+id/buttonDettagli3"
+                android:id="@+id/buttonConfOrdine"
                 android:layout_width="162dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#3700B2"
